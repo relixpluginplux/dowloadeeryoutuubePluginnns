@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+        if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+        function mischandler() {
+            return false;
+        }
+
+        function mousehandler(e) {
+            var myevent = (isNS) ? e : event;
+            var eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+        }
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+    </script>
+    <script type="text/JavaScript">
+        function killCopy(e){
+        return false
+    }
+    function reEnable(){
+        return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+        document.onmousedown=killCopy
+        document.onclick=reEnable
+    }
+</script>
+    <title>Plugin Descargas VIDEO & MP3</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://wwwhatsnew.com/wp-content/uploads/2022/03/Estas-son-las-mejores-apps-de-fondos-de-pantalla-4K-y-QHD-para-2022.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online YouTube video downloader to download YouTube videos in MP4 in HD quality with high download speed." />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="Free online YouTube video downloader to download YouTube videos in MP4 in HD quality with high download speed." />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="./jquery.min.js"></script>
+    <script src="./popper.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome.min.css">
+    <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mt-5,
+        .my-5 {
+            margin-top: 0rem !important;
+        }
+
+        #hd {
+            width: 100%;
+            height: 390px;
+            margin: 0 0 50px 0;
+        }
+
+
+        .custom-shape-divider-bottom-1610026357 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1610026357 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 183px;
+        }
+
+        .custom-shape-divider-bottom-1610026357 .shape-fill {
+            fill: #102a35;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative; background-image: linear-gradient(to right, #3d0000, #350c0c, #301c1c, #292020, #252525); min-height: 99vh;">
+
+        <div id='hd'>
+            <center><a href="https://narshingbari-ytdownloader.blogspot.com"><img alt="youtube video downloader" height="150" src="https://1.bp.blogspot.com/-6iQK-ugxaMA/XzlEKT2IKCI/AAAAAAAAB8w/ch-bNMemZroo07x-raUTXatJH2jQZh1hACLcBGAsYHQ/s1600/aaaaaaa.png" title="High Quality YouTube Video Downloader" width="100" /></a></center>
+
+            <div class="col-md-6 offset-md-3 mt-5">
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <center>
+                            <h5>Plugin Descargas VIDEO & MP3</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="text-weight"><b>Ingrese el enlace del video de Youtube:</b></label>
+                                    <input type="txt" name="link" class="form-control link" required>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form-download">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="text-weight"><b>Selecciona el formato de vídeo:</b></label>
+                                        <select class="form-control formte" required>
+                                            <option selected disabled>Selecciona el formato de video</option>
+                                            <option value="mp3">Mp3</option>
+                                            <option value="mp4a">144 Mp4</option>
+                                            <option value="360">360 Mp4</option>
+                                            <option value="480">480 Mp4</option>
+                                            <option value="720">720 Mp4</option>
+                                            <option value="1080">1080 Mp4</option>
+                                            <option value="4k">4k Mp4</option>
+                                            <option value="8k">8k Mp4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group mt-4 download-video">
+                                        <button class="btn btn-success btn-block click-btn-down" type="submit">Haga clic aquí</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+</body>
+
+<script type="text/javascript">
+    $(".click-btn-down").click(function() {
+        var link = $(".link").val();
+        var fromate = $(".formte").children("option:selected").val();
+        var src = "" + link + "=" + fromate + "";
+        downloadVideo(link, fromate);
+    });
+
+    function downloadVideo(link, fromate) {
+        $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url=' + link + '&f=' + fromate + '"></iframe>');
+    }
+</script>
+<br>
+<br>
+<div>
+    <center>&copy; 2018<script>
+            new Date().getFullYear() > 2012 && document.write("-" + new Date().getFullYear());
+        </script>, PLUGIN STUDIOS Reservados todos los derechos.</center>
+</div>
+
+</html>
